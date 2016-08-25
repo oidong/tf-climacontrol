@@ -1,0 +1,51 @@
+html, body {
+  height: 100%;
+}
+
+.p-t-30 {
+    padding-top: 1.874rem;
+}
+
+.p-t-15 {
+    padding-top: 0.9375rem;
+}
+
+.sub-header {
+  padding-bottom: 0.625rem;
+  border-bottom: 0.0625rem solid #eee;
+}
+
+.main {
+  padding: 1.25rem;
+}
+@media (min-width: 48rem) {
+  .main {
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+  }
+}
+
+.placeholders {
+  margin-bottom: 1.875rem;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0rem;
+}
+.placeholder {
+  margin-bottom: 1.25rem;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.dashboard-display
+{
+width:200px;
+height:200px;
+border-radius:50%;
+/*font-size:12px;*/
+line-height:200px;
+text-align:center;
+}

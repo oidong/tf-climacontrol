@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+     <section id="dashBoard" class="p-t-15"> 
+      <div class="container">
+       <h2>Aktuelle Werte</h2>
+       <div class="row placeholders">
+        <div class="col-xs-6 col-sm-3 placeholder">
+         <a class="btn btn-info dashboard-display" href="{{ url_for('diagramme') }}#licht">0.2 Lux</a>
+         <h4 class="p-t-1">Lichtstärke</h4>
+         <span class="text-muted">09:54:02 Uhr</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+         <a class="btn btn-success dashboard-display" href="{{ url_for('diagramme') }}#feuchte">57.0 %RH</a>
+         <h4 class="p-t-1">Luftfeuchtigkeit</h4>
+         <span class="text-muted">09:54:02 Uhr</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+         <a class="btn btn-warning dashboard-display" href="{{ url_for('diagramme') }}#ambtemp">22.7 °C</a>
+         <h4 class="p-t-1">Umgebungstemperatur</h4>
+         <span class="text-muted">09:54:02 Uhr</span>
+        </div>
+        <div class="col-xs-6 col-sm-3 placeholder">
+         <a class="btn btn-danger dashboard-display" href="{{ url_for('diagramme') }}#objtemp">22.5 °C</a>
+         <h4 class="p-t-1">Objekttemperatur</h4>
+         <span class="text-muted">09:54:02 Uhr</span>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section id="datenBank" class="p-t-15">
+      <div class="container">
+       <h2>Datenbank</h2>
+       <div class="table-responsive">
+        <table class="table table-hover">
+         <thead>
+          <tr>
+           <th>#</th>
+           <th>Illuminance</th>
+           <th>Humidity</th>
+           <th>Ambient Temp</th>
+           <th>Object Temp</th>
+           <th>Timestamp</th>
+          </tr>
+         </thead>
+         <tbody>
+          {% for ambientvalue in ambientvalues %}
+          <tr>  
+           <td>{{ ambientvalue.id }}</td>
+           <td>{{ ambientvalue.illuminance }} Lux </td>
+           <td>{{ ambientvalue.humidity }} %RH </td>
+           <td>{{ ambientvalue.ambtemp }} &deg;C</td>
+           <td>{{ ambientvalue.objtemp }} &deg;C</td>
+           <td>{{ ambientvalue.timestamp }}</td>
+          </tr>                  
+          {% endfor %}
+         </tbody>
+        </table>
+       </div>
+      </div>
+     </section>
+{% endblock %}

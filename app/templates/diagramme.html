@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<section id="charts" class="p-t-15">
+ <div class="container">
+  <h2>Luftfeuchtigkeit</h2>
+  <section id="feuchte">
+   <div id="chart_container">
+    <canvas id="humidity"></canvas>
+   </div>
+  </section>
+  
+  <section id="licht">
+   <h2>Lichtstärke</h2>
+   <div id="chart_container">
+    <canvas id="illuminance"></canvas>
+   </div>
+  </section>
+
+  <section id="ambtemp">
+   <h2>Umgebungstemperatur</h2>
+   <div id="chart_container">
+    <canvas id="ambientTemperatur"></canvas>
+   </div>
+  </section>
+  
+  <section id="objtemp">
+   <h2>Objekttemperatur</h2>
+   <div id="chart_container">
+    <canvas id="objectTemperatur"></canvas>
+   </div>
+  </section>
+ </div>
+</section>
+{% endblock %}

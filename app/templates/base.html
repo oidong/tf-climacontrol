@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+ <head>
+  <meta charset="urf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/static/bilder/favicon.ico">
+  <title> {{ title }}</title>
+  <link rel="stylesheet" media="screen" href="/static/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/climacontrol.css">
+  {% for stylesheet in stylesheets %}
+  <link rel="stylesheet" href="/static/{{ stylesheet }}">
+  {% endfor %}
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="../../assets/js/html5shiv.js"></script>
+    <script src="../../assets/js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ 
+ <body>
+  <nav class="navbar navbar-full navbar-dark bg-inverse">
+   <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+    &#9776;
+   </button>
+
+   <div class="collapse navbar-toggleable-xs" id="mainNavbar">
+    <a class="navbar-brand" href="{{ url_for('index') }}">
+      <i class="fa fa-pied-piper" aria-hidden="true"></i>
+      ClimaControl
+    </a>
+    <ul class="nav navbar-nav pull-xs-right">
+     <li class="nav-item {{ index_state }}">
+      <a class="nav-link" href="{{ url_for('index') }}">
+      Dashboard <i class="fa fa-tachometer" aria-hidden="true"></i>
+      </a>
+     </li>
+     <li class="nav-item {{ datenbank_state }}">
+      <a class="nav-link" href="{{ url_for('datenbank') }}">
+       Datenbank <i class="fa fa-database" aria-hidden="true"></i>
+      </a>
+     </li>
+     <li class="nav-item {{ diabgrammme_state }}">
+      <a class="nav-link" href="{{ url_for('diagramme') }}">
+       Diagramme <i class="fa fa-bar-chart" aria-hidden="true"></i>
+      </a>
+     </li>
+    </ul>
+   </div>
+  </nav>
+  
+  {% include 'flash.html' %}
+  {% block content %}
+  {% endblock %}
+
+  {% for script in scripts %}
+  <script src="/static/{{ script }}"></script>
+  {% endfor %}
+  <script src="/static/jquery-3.1.0.min.js"></script>
+  <script src="/static/tether/js/tether.min.js"></script>
+  <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
