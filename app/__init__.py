@@ -1,10 +1,19 @@
-# -*- coding: utf-8 -*-
+from flask import Flask, app
+from app import models
+from .models import db
+from app.controllers.main import main_blueprint
 
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(__name__)
-app.config.from_object('config')
-db = SQLAlchemy(app)
+def create_app(config_object):
+    app = Flask(__name__)
+    app.config.from_object(config_object)
+    
+    db.init_app(app)
 
-from app import views, models
+    app.register_blueprint(main_blueprint)
+
+    return app
+
+if __name__ == "__main__":
+    app.run()
+

@@ -34,7 +34,7 @@
         <ul class="pagination">
          {% if ambientvalues.has_prev %}
           <li class="page-item">
-           <a class="page-link" href="{{ url_for('datenbank', page=ambientvalues.prev_num) }}" aria-label="Previous">
+           <a class="page-link" href="{{ url_for('.datenbank', page=ambientvalues.prev_num) }}" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
            </a>
           </li>
@@ -50,7 +50,7 @@
           {% if page %}
            {% if page != ambientvalues.page %}
             <li class="page-item">
-             <a class="page-link" href="{{ url_for('datenbank', page=page) }}">{{ page }}</a>
+             <a class="page-link" href="{{ url_for('.datenbank', page=page) }}">{{ page }}</a>
             </li>
            {% else %}
             <li class="page-item active">
@@ -62,7 +62,7 @@
 
          {% if ambientvalues.has_next %}
           <li class="page-item">
-           <a class="page-link" href="{{ url_for('datenbank', page=ambientvalues.next_num) }}" aria-label="Next">
+           <a class="page-link" href="{{ url_for('.datenbank', page=ambientvalues.next_num) }}" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
            </a>
           </li>

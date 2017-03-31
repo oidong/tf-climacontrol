@@ -1,8 +1,6 @@
-# -*- coding: utf-8 -*-
+from flask_sqlalchemy import SQLAlchemy
 
-from app import db
-from app import app
-import sys
+db = SQLAlchemy()
 
 class Ambientvalues(db.Model):
 

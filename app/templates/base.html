@@ -28,23 +28,23 @@
    </button>
 
    <div class="collapse navbar-toggleable-xs" id="mainNavbar">
-    <a class="navbar-brand" href="{{ url_for('index') }}">
+    <a class="navbar-brand" href="{{ url_for('.index') }}">
       <i class="fa fa-pied-piper" aria-hidden="true"></i>
       ClimaControl
     </a>
     <ul class="nav navbar-nav pull-xs-right">
      <li class="nav-item {{ index_state }}">
-      <a class="nav-link" href="{{ url_for('index') }}">
+      <a class="nav-link" href="{{ url_for('.index') }}">
       Dashboard <i class="fa fa-tachometer" aria-hidden="true"></i>
       </a>
      </li>
      <li class="nav-item {{ datenbank_state }}">
-      <a class="nav-link" href="{{ url_for('datenbank') }}">
+      <a class="nav-link" href="{{ url_for('.datenbank') }}">
        Datenbank <i class="fa fa-database" aria-hidden="true"></i>
       </a>
      </li>
      <li class="nav-item {{ diabgrammme_state }}">
-      <a class="nav-link" href="{{ url_for('diagramme') }}">
+      <a class="nav-link" href="{{ url_for('.diagramme') }}">
        Diagramme <i class="fa fa-bar-chart" aria-hidden="true"></i>
       </a>
      </li>
