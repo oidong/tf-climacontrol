@@ -1,9 +1,0 @@
-Requirements:
-	Python 2.7
-	Flask==0.11
-	Flask-SQLAlchemy==2.1
-	Bootstrap v4.0.0-alpha.3
-	Chart.js 2.2.2
-	jQuery jQuery v3.1.0
-	Font Awesome 4.6.3
-	tether 1.3.3
