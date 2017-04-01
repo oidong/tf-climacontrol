@@ -1,6 +1,6 @@
 # tf-climacontrol
 
-##Requirements:
+##Requirements
 - Python 3.6
 - Flask==0.12.1
 - Flask-Script==2.0.5
